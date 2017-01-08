@@ -7,15 +7,13 @@ import * as io from "socket.io-client";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'BloodMap';
   socket = null;
 
   ngOnInit() {
-    this.socket = io.connect('http://localhost');
-    this.socket.on('news', function (data) {
-      console.log(data);
-      this.socket.emit('my other event', { my: 'data' });
-    });
+    this.socket = io.connect('http://localhost:5000');
+    this.socket.emit('new user', { my: 'data' });
   }
 }
