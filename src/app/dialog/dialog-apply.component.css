@@ -1,0 +1,18 @@
+.donor-application {
+  box-shadow: none;
+  min-width: 300px;
+  padding: 0;
+}
+
+.donor-application md-input, .donor-application md-select {
+  width: 100%;
+}
+
+.donor-application md-select {
+  margin: 10px 0 10px;
+}
+
+.donor-application .action-bar {
+  margin-top: 20px;
+  text-align: right;
+}
