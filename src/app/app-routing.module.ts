@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MapComponent } from './map/map.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 const APP_ROUTES: Routes = [
-  { path: 'map', loadChildren: './esri-map/esri-map.module#EsriMapModule' },
-  { path: '**', redirectTo: '/map' }
-]
+  { path: '', component: MapComponent },
+  { path: 'apply', component: DialogComponent }
+];
 
 @NgModule({
   imports: [

@@ -50,5 +50,5 @@ describe('EsriMapComponent', () => {
       center: [-118, 34.5],
       zoom: 8,
     });
-  })
+  });
 });

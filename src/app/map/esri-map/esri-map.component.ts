@@ -23,5 +23,10 @@ export class EsriMapComponent implements OnInit {
   onMapInit(mapInfo: {map: __esri.Map, mapView: __esri.MapView}) {
     this.map = mapInfo.map;
     this.mapView = mapInfo.mapView;
+
+    mapInfo.mapView.on('click', (event) => {
+      const lat = event.mapPoint.latitude;
+      const lon = event.mapPoint.longitude;
+    });
   }
 }

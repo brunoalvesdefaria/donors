@@ -7,19 +7,22 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { HeaderComponent } from './header/header.component';
+import { DialogComponent } from './dialog/dialog.component';
+
+import { MapModule } from './map/map.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    DialogComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    MapModule
   ],
   bootstrap: [AppComponent]
 })
