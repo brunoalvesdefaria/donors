@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-esri-map',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EsriMapComponent implements OnInit {
   mapProperties: __esri.MapProperties = {
-    basemap: 'dark-gray'
+    basemap: 'streets'
   };
   mapViewProperties: __esri.MapViewProperties = {
     center: [-118, 34.5],
@@ -16,7 +17,7 @@ export class EsriMapComponent implements OnInit {
   map: __esri.Map;
   mapView: __esri.MapView;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() { }
 
@@ -24,9 +25,11 @@ export class EsriMapComponent implements OnInit {
     this.map = mapInfo.map;
     this.mapView = mapInfo.mapView;
 
-    mapInfo.mapView.on('click', (event) => {
+    mapInfo.mapView.on('click', event => {
       const lat = event.mapPoint.latitude;
       const lon = event.mapPoint.longitude;
+      const navigationExtras: NavigationExtras = { queryParams: { lat, lon } };
+      this.router.navigate(['apply'], navigationExtras);
     });
   }
 }

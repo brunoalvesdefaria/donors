@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { MainComponent } from './main/main.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { DialogApplyComponent } from './dialog/dialog-apply.component';
 
 import { HeaderComponent } from './header/header.component';
 import { EsriMapModule } from './esri-map/esri-map.module';
@@ -17,6 +18,7 @@ import { EsriMapModule } from './esri-map/esri-map.module';
     AppComponent,
     MainComponent,
     DialogComponent,
+    DialogApplyComponent,
     HeaderComponent
   ],
   imports: [
@@ -26,6 +28,9 @@ import { EsriMapModule } from './esri-map/esri-map.module';
     MaterialModule.forRoot(),
     AppRoutingModule,
     EsriMapModule
+  ],
+  entryComponents: [
+    DialogApplyComponent
   ],
   bootstrap: [AppComponent]
 })
