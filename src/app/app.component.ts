@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-
-import * as io from "socket.io-client";
+import { Component, OnInit } from '@angular/core';
+import * as io from 'socket.io-client';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +7,22 @@ import * as io from "socket.io-client";
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
-  title = 'BloodMap';
+export class AppComponent implements OnInit {
+
+
   socket = null;
 
-  ngOnInit() {
-    this.socket = io.connect('http://localhost:5000');
-    this.socket.emit('new user', { my: 'data' });
+  constructor() {
   }
+
+  ngOnInit() {
+    const newsHandler = data => {
+      console.log(data);
+      this.socket.emit('my other event', { my: 'data' });
+    };
+
+    this.socket = io.connect('http://localhost:5000');
+    this.socket.on('news', newsHandler);
+  }
+
 }
