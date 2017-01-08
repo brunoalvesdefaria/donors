@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MapComponent } from './map/map.component';
+import { MainComponent } from './main/main.component';
 import { DialogComponent } from './dialog/dialog.component';
 
 const APP_ROUTES: Routes = [
-  { path: '', component: MapComponent },
+  { path: '', component: MainComponent },
   { path: 'apply', component: DialogComponent }
 ];
 
